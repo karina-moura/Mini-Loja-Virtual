@@ -31,7 +31,16 @@ inicializarLoja = () => {
 inicializarLoja();
 
 atualizarCarrinho = () => {
-    console.log(itens);
+    var containerCarrinho = document.getElementById('carrinho');
+    containerCarrinho.innerHTML = "";
+    itens.map((val)=>{
+        if(val.quantidade > 0){
+        containerCarrinho.innerHTML += `
+       <p>`+val.nome+` | quantidade: `+val.quantidade+`</p>
+       <hr>
+       `;
+       }
+    })
 
 }
 
